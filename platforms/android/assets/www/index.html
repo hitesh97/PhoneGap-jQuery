@@ -34,27 +34,16 @@
 			</div>	        
 	        <div data-role="content">
 	            <ul id="taskList" data-role="listview">
-	                <li><a href="#win2">Task 1</a></li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>	                
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
-	                <li>Task 2</li>
+	                <li><a href="#playerPage?id=UneYkq0FzKA" >humpty Dumpty</a></li>
+	                <li><a href="#playerPage?id=gBEHFFnV3RY" >Baa Baa Black Sheep</a></li>
+	                <li><a href="#playerPage?id=K3YQsmznd4c" >A B C D E F G</a></li>
+	                <li><a href="#playerPage?id=MBxeKG7_Hq4" >Incy WIncy SPider</a></li>
+	                <li><a href="#playerPage?id=7_mol6B9z00" >Old McDonald had a farm</a></li>
+	                <li><a href="#playerPage?id=REl2h5zVNN0" >cbeebies - Justin</a></li>
+	                <li><a href="#playerPage?id=aH5dutgw7h4" >cbeebeis  - Justin House</a></li>
+	                <li><a href="#playerPage?id=eR20PMLni3U" >Number Jacks</a></li>
+	                <li><a href="#playerPage?id=UneYkq0FzKA" >humpty Dumpty</a></li>
+	                <li><a href="#playerPage?id=UneYkq0FzKA" >humpty Dumpty</a></li>
 	            </ul>
 	        </div>
 	        <div data-role="footer" data-position="fixed">
@@ -62,30 +51,58 @@
 	        </div>
 	    </div>
 
-<div data-role=page id=win2 data-add-back-btn=true>
-  <div data-role=header>
-    <h1>Window 2</h1>
-  </div>
+        <div data-role=page id=playerPage data-add-back-btn=true>
+          <div data-role=header data-position="fixed">
+            <h1>Player Page </h1>
+          </div>
+        
+          <div data-role=content id="placeholder2">
+          </div>
+        </div>
 
-  <div data-role=content>
-    <p> Window content 2 </p>
-  </div>
-</div>	           
         <script type="text/javascript" src="cordova.js"></script>
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		  <script>
-		    $(document).bind ("mobileinit", function ()
-		    {
-		    	//this alert occurs FIRST !!
-		      //alert ("mobileinit");
-		    });
-		  </script> 
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
 		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jqm.page.params.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
-    
+          <script>
+            $(document).bind ("mobileinit", function ()
+            {
+                //this alert occurs FIRST !!
+              //alert ("mobileinit");
+            });
+            
+            $(document).bind("pagebeforechange", function( event, data ) {
+                $.mobile.pageData = (data && data.options && data.options.pageData)
+                    ? data.options.pageData
+                    : null;
+            });
+            
+            $(document).on("pagebeforeshow", "#playerPage", function(e, data){
+                if ($.mobile.pageData && $.mobile.pageData.id){
+                    //console.log("Parameter id=" + $.mobile.pageData.id);
+                    //alert($.mobile.pageData.id)
+                }
+             });
+             
+            $( document ).delegate("#playerPage", "pageinit", function() {
+            });
+                
+            $( document ).delegate("#playerPage", "pageshow", function() {
+                if ($.mobile.pageData && $.mobile.pageData.id){
+                    //console.log("Parameter id=" + $.mobile.pageData.id);
+                    vidId = $.mobile.pageData.id
+                    var vidFrame = "<iframe src='http://www.youtube.com/embed/" + vidId + "?html5=1' width='497' height='298' seamless></iframe>";
+                    $("#placeholder2").html(vidFrame)
+
+                }
+            });             
+                    
+           
+          </script>    
 		<script>
 		
 			$(document).ready (function ()
