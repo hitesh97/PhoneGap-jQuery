@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.example.hello" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Hello</name>
+<name>Nursery Rhymes</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        My First Nursery Rhyme Video App
     </description>
-    <author email="dev@callback.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="khatri.hitesh@gmail.com" href="http://khatri.hitesh.com">
+        Hitesh Khatri
     </author>
     <access origin="*" />
+    <access origin="http://youtube.com" subdomains="true" />
+    <preference name="useBrowserHistory" value="true" />
+    <preference name="exit-on-suspend" value="false" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
 </widget>
