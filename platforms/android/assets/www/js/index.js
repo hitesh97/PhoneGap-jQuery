@@ -47,5 +47,7 @@ var app = {
         //alert('***** 1 ******')
       //this alert occurs last, after DOM READY and DOCUMENT BIND !!
         console.log('Received Event: ' + id);
+        //var id = "w67zzPBe6TE";
+        //var ref = window.open('http://www.youtube.com/embed/'+id+'?html5=1', '_blank', 'location=yes');
     }
 };
