@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.helloCordova" version="2.0.0" xmlns="http://www.w3.org/ns/widgets">
-    <name>Nursery Rhymes</name>
+    <name>My Nursery Rhymes</name>
     <description>
-        My First Nursery Rhyme Video App
+        Simple and free Nursery Rhymes video app
     </description>
     <author email="khatri.hitesh@gmail.com" href="http://khatri.hitesh.com">
         Apache Cordova Team
