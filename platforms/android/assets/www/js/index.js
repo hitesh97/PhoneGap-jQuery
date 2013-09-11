@@ -37,17 +37,5 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        //var listeningElement = parentElement.querySelector('.listening');
-        //var receivedElement = parentElement.querySelector('.received');
-
-        //listeningElement.setAttribute('style', 'display:none;');
-        //receivedElement.setAttribute('style', 'display:block;');
-
-        //alert('***** 1 ******')
-      //this alert occurs last, after DOM READY and DOCUMENT BIND !!
-        console.log('Received Event: ' + id);
-        //var id = "w67zzPBe6TE";
-        //var ref = window.open('http://www.youtube.com/embed/'+id+'?html5=1', '_blank', 'location=yes');
     }
 };
