@@ -21,16 +21,28 @@ package com.Akruti.Android;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
+import com.google.ads.*;
+import android.widget.LinearLayout;
 
 public class NurseryRhymes extends DroidGap
 {
+	private static final String AdMob_Ad_Unit = "a15230e2197d0d0";
+	private AdView adView;
+	
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 		// Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///assets/www/index.html");
+        
+        adView = new AdView(this, AdSize.BANNER, AdMob_Ad_Unit); 
+        LinearLayout layout = super.root;
+        layout.addView(adView); 
+        AdRequest request = new AdRequest();
+        request.addTestDevice(request.TEST_EMULATOR);
+        request.addTestDevice("00194a163e3f5e");
+        adView.loadAd(request);
     }
 }
 
