@@ -40,8 +40,8 @@ public class NurseryRhymes extends DroidGap
         LinearLayout layout = super.root;
         layout.addView(adView, 0); 
         AdRequest request = new AdRequest();
-        request.addTestDevice(request.TEST_EMULATOR);
-        request.addTestDevice("00194a163e3f5e");
+        //request.addTestDevice(request.TEST_EMULATOR);
+        //request.addTestDevice("00194a163e3f5e");
         adView.loadAd(request);
     }
 }
