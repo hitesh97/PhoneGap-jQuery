@@ -38,7 +38,7 @@ public class NurseryRhymes extends DroidGap
         
         adView = new AdView(this, AdSize.BANNER, AdMob_Ad_Unit); 
         LinearLayout layout = super.root;
-        layout.addView(adView); 
+        layout.addView(adView, 0); 
         AdRequest request = new AdRequest();
         request.addTestDevice(request.TEST_EMULATOR);
         request.addTestDevice("00194a163e3f5e");
